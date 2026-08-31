@@ -402,9 +402,10 @@ export default function HeroScene() {
       bCtx.fillText(b.name, 48, 36);
 
       const bTex = new THREE.CanvasTexture(bCanvas);
-      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: bTex, transparent: true, opacity: 0.98 }));
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: bTex, transparent: true, opacity: 0.98, depthWrite: false, depthTest: false }));
       sprite.position.set(b.x, b.y, b.z);
       sprite.scale.set(0.68, 0.21, 1);
+      sprite.renderOrder = -1;
       root.add(sprite);
 
       badgeMeshes.push({ sprite, baseY: b.y, phase: i * 0.95 });

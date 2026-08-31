@@ -103,7 +103,7 @@ export default function Hero() {
           <div className="hero-meta" role="list" aria-label="Quick stats">
             <div className="hero-meta-item" role="listitem">
               <span className="hero-meta-value">5+</span>
-              <span className="hero-meta-label">Projects Shipped</span>
+              <span className="hero-meta-label">Projects Built</span>
             </div>
             <div className="hero-meta-item" role="listitem">
               <span className="hero-meta-value">Full</span>
