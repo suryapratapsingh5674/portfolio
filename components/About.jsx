@@ -93,6 +93,27 @@ export default function About() {
               </blockquote>
             </div>
 
+            {/* Achievements */}
+            <div className="about-achievements reveal reveal-delay-2">
+              <p className="text-label" style={{ marginBottom: '0.75rem' }}>Achievements</p>
+              <div className="about-achievements-list">
+                <div className="about-achievement-item">
+                  <span className="about-achievement-icon" aria-hidden="true">⚡</span>
+                  <div>
+                    <p className="about-achievement-title">80+ LeetCode Problems Solved</p>
+                    <p className="about-achievement-desc">Consistently sharpening algorithmic thinking and problem-solving skills across data structures, dynamic programming, and more.</p>
+                  </div>
+                </div>
+                <div className="about-achievement-item">
+                  <span className="about-achievement-icon" aria-hidden="true">🏆</span>
+                  <div>
+                    <p className="about-achievement-title">Kodr Hackathon — 1st Place</p>
+                    <p className="about-achievement-desc">Secured first place at the Kodr Hackathon, delivering a fully functional product under pressure within a competitive time limit.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Blog posts */}
             <div className="reveal reveal-delay-2">
               <p className="text-label" style={{ marginBottom: '0.75rem' }}>

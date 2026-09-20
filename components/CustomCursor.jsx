@@ -1,25 +1,34 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 export default function CustomCursor() {
   const dotRef = useRef(null);
   const ringRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
+    // Start both off-screen — stays hidden until the first real mouse position
+    let mouseX = -200, mouseY = -200;
+    let ringX = -200, ringY = -200;
     let rafId = null;
+    let hasMoved = false;
 
     const onMouseMove = (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.left = mouseX + 'px';
       dot.style.top = mouseY + 'px';
+
+      // Reveal only after we have a real position
+      if (!hasMoved) {
+        hasMoved = true;
+        dot.style.opacity = '1';
+        ring.style.opacity = '1';
+      }
     };
 
     const onMouseDown = () => dot.classList.add('clicking');
@@ -74,8 +83,8 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={dotRef} className="cursor-dot" aria-hidden="true" />
-      <div ref={ringRef} className="cursor-ring" aria-hidden="true" />
+      <div ref={dotRef} className="cursor-dot" aria-hidden="true" style={{ opacity: 0 }} />
+      <div ref={ringRef} className="cursor-ring" aria-hidden="true" style={{ opacity: 0 }} />
     </>
   );
 }
