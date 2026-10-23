@@ -2,7 +2,7 @@
 
 import { skills } from '@/lib/data';
 
-const skillKeys = ['frontend', 'backend', 'database', 'tools'];
+const skillKeys = ['frontend', 'backend', 'ai', 'database', 'tools'];
 
 export default function Skills() {
   return (

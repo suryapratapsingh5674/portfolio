@@ -421,6 +421,7 @@ button {
 .reveal-delay-2 { transition-delay: 0.12s; }
 .reveal-delay-3 { transition-delay: 0.18s; }
 .reveal-delay-4 { transition-delay: 0.24s; }
+.reveal-delay-5 { transition-delay: 0.30s; }
 
 /* --- Reduced motion --- */
 @media (prefers-reduced-motion: reduce) {
